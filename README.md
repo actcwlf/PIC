@@ -185,14 +185,14 @@ python eval.py \
 The run reports mean PSNR / MS-SSIM / LPIPS / BPP over the folder and writes
 `output_eval.log` into `--pipeline.output_dir`.
 
-- `--pipeline.train_data_dir` is required by the config even though evaluation only reads
+- `--train_data_dir` is required by the config even though evaluation only reads
   `valid_data_dir`.
 - Checkpoint names encode their setting — `..._lmbda0.005_s16_n8.pth` means `q_scale=16`,
-  `n_latent=8`. These match the defaults in `configurations.py`, so `--model.*` can be omitted.
+  `n_latent=8`. These match the defaults in `configurations.py`.
 - Kodak images are $768 \times 512$; with $L = 8$ latents the smallest supported input is
   $256 \times 256$.
 
-### Training / fine-tuning
+### Training 
 
 ```bash
 python train.py \
